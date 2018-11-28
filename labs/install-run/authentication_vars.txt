@@ -1,0 +1,4 @@
+#Cluster Authentication Variables
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider', 'filename': '/etc/origin/master/htpasswd'}]
+openshift_master_htpasswd_users={'admin':'$apr1$EtN/lvkt$wHw35oWF35ioju.Kna5xF/', 'developer':'$apr1$kFs2nEWt$B2rTetBBNvfZdq8OlVrs5.'}
+

@@ -1,0 +1,153 @@
+2018-11-26 15:34:00,534 p=4531 u=student |  ERROR! Missing target hosts
+2018-11-26 15:34:05,613 p=4542 u=student |  ERROR! Missing target hosts
+2018-11-26 15:37:34,098 p=4692 u=student |  Using /home/student/DO280/labs/install-prepare/ansible.cfg as config file
+2018-11-26 15:37:34,357 p=4692 u=student |  PLAY [Verify Connectivity] ******************************************************************************
+2018-11-26 15:37:34,365 p=4692 u=student |  TASK [Test connectivity to machines.] *******************************************************************
+2018-11-26 15:37:35,244 p=4692 u=student |  ok: [master.lab.example.com] => {"changed": false, "cmd": "whoami", "delta": "0:00:00.005203", "end": "2018-11-26 15:37:35.218370", "rc": 0, "start": "2018-11-26 15:37:35.213167", "stderr": "", "stderr_lines": [], "stdout": "root", "stdout_lines": ["root"]}
+2018-11-26 15:37:35,325 p=4692 u=student |  ok: [node2.lab.example.com] => {"changed": false, "cmd": "whoami", "delta": "0:00:00.005324", "end": "2018-11-26 15:37:35.256176", "rc": 0, "start": "2018-11-26 15:37:35.250852", "stderr": "", "stderr_lines": [], "stdout": "root", "stdout_lines": ["root"]}
+2018-11-26 15:37:35,325 p=4692 u=student |  ok: [workstation.lab.example.com] => {"changed": false, "cmd": "whoami", "delta": "0:00:00.006851", "end": "2018-11-26 15:37:35.300158", "rc": 0, "start": "2018-11-26 15:37:35.293307", "stderr": "", "stderr_lines": [], "stdout": "root", "stdout_lines": ["root"]}
+2018-11-26 15:37:35,326 p=4692 u=student |  ok: [services.lab.example.com] => {"changed": false, "cmd": "whoami", "delta": "0:00:00.006604", "end": "2018-11-26 15:37:35.259095", "rc": 0, "start": "2018-11-26 15:37:35.252491", "stderr": "", "stderr_lines": [], "stdout": "root", "stdout_lines": ["root"]}
+2018-11-26 15:37:35,345 p=4692 u=student |  ok: [node1.lab.example.com] => {"changed": false, "cmd": "whoami", "delta": "0:00:00.005967", "end": "2018-11-26 15:37:35.323150", "rc": 0, "start": "2018-11-26 15:37:35.317183", "stderr": "", "stderr_lines": [], "stdout": "root", "stdout_lines": ["root"]}
+2018-11-26 15:37:35,347 p=4692 u=student |  PLAY RECAP **********************************************************************************************
+2018-11-26 15:37:35,347 p=4692 u=student |  master.lab.example.com     : ok=1    changed=0    unreachable=0    failed=0   
+2018-11-26 15:37:35,347 p=4692 u=student |  node1.lab.example.com      : ok=1    changed=0    unreachable=0    failed=0   
+2018-11-26 15:37:35,347 p=4692 u=student |  node2.lab.example.com      : ok=1    changed=0    unreachable=0    failed=0   
+2018-11-26 15:37:35,348 p=4692 u=student |  services.lab.example.com   : ok=1    changed=0    unreachable=0    failed=0   
+2018-11-26 15:37:35,348 p=4692 u=student |  workstation.lab.example.com : ok=1    changed=0    unreachable=0    failed=0   
+2018-11-26 15:40:41,930 p=8435 u=student |  PLAY [Host Preparation: Docker tasks] *******************************************************************
+2018-11-26 15:40:41,944 p=8435 u=student |  TASK [Gathering Facts] **********************************************************************************
+2018-11-26 15:40:43,010 p=8435 u=student |  ok: [node2.lab.example.com]
+2018-11-26 15:40:43,023 p=8435 u=student |  ok: [node1.lab.example.com]
+2018-11-26 15:40:43,048 p=8435 u=student |  ok: [master.lab.example.com]
+2018-11-26 15:40:43,054 p=8435 u=student |  TASK [firewall : Start/Enable Service] ******************************************************************
+2018-11-26 15:40:43,537 p=8435 u=student |  ok: [node1.lab.example.com]
+2018-11-26 15:40:43,601 p=8435 u=student |  ok: [node2.lab.example.com]
+2018-11-26 15:40:43,603 p=8435 u=student |  ok: [master.lab.example.com]
+2018-11-26 15:40:43,610 p=8435 u=student |  TASK [docker : Install Packages] ************************************************************************
+2018-11-26 15:41:20,167 p=8435 u=student |  changed: [node2.lab.example.com] => (item=[u'docker', u'ca-certificates'])
+2018-11-26 15:41:22,904 p=8435 u=student |  changed: [node1.lab.example.com] => (item=[u'docker', u'ca-certificates'])
+2018-11-26 15:41:23,858 p=8435 u=student |  changed: [master.lab.example.com] => (item=[u'docker', u'ca-certificates'])
+2018-11-26 15:41:23,864 p=8435 u=student |  TASK [docker : Docker Group] ****************************************************************************
+2018-11-26 15:41:24,563 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:24,575 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:24,587 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:24,593 p=8435 u=student |  TASK [docker : Insecure Registries] *********************************************************************
+2018-11-26 15:41:25,063 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:25,111 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:25,122 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:25,130 p=8435 u=student |  TASK [docker : Remove Insecure Registries] **************************************************************
+2018-11-26 15:41:25,180 p=8435 u=student |  skipping: [node2.lab.example.com]
+2018-11-26 15:41:25,182 p=8435 u=student |  skipping: [node1.lab.example.com]
+2018-11-26 15:41:25,182 p=8435 u=student |  skipping: [master.lab.example.com]
+2018-11-26 15:41:25,188 p=8435 u=student |  TASK [docker : Add Local Lab Registry] ******************************************************************
+2018-11-26 15:41:25,555 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:25,576 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:25,594 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:25,599 p=8435 u=student |  TASK [docker : Block Online Registries] *****************************************************************
+2018-11-26 15:41:25,968 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:25,971 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:25,987 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:25,993 p=8435 u=student |  TASK [docker : UnBlock Online Registries] ***************************************************************
+2018-11-26 15:41:26,023 p=8435 u=student |  skipping: [node2.lab.example.com]
+2018-11-26 15:41:26,033 p=8435 u=student |  skipping: [master.lab.example.com]
+2018-11-26 15:41:26,042 p=8435 u=student |  skipping: [node1.lab.example.com]
+2018-11-26 15:41:26,049 p=8435 u=student |  TASK [docker : Add Local Lab Registry] ******************************************************************
+2018-11-26 15:41:26,081 p=8435 u=student |  skipping: [master.lab.example.com]
+2018-11-26 15:41:26,096 p=8435 u=student |  skipping: [node1.lab.example.com]
+2018-11-26 15:41:26,099 p=8435 u=student |  skipping: [node2.lab.example.com]
+2018-11-26 15:41:26,105 p=8435 u=student |  TASK [docker : Enable DNS for Docker] *******************************************************************
+2018-11-26 15:41:26,141 p=8435 u=student |  skipping: [node1.lab.example.com]
+2018-11-26 15:41:26,145 p=8435 u=student |  skipping: [master.lab.example.com]
+2018-11-26 15:41:26,153 p=8435 u=student |  skipping: [node2.lab.example.com]
+2018-11-26 15:41:26,159 p=8435 u=student |  TASK [docker : (Re-)Start/Enable Service] ***************************************************************
+2018-11-26 15:41:28,826 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:28,990 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:29,006 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:29,012 p=8435 u=student |  TASK [docker : Enable IP Forwarding] ********************************************************************
+2018-11-26 15:41:29,499 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:29,568 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:29,569 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:29,576 p=8435 u=student |  TASK [docker : firewalld zone dockerc exists] ***********************************************************
+2018-11-26 15:41:30,351 p=8435 u=student |  ok: [node1.lab.example.com]
+2018-11-26 15:41:30,482 p=8435 u=student |  ok: [node2.lab.example.com]
+2018-11-26 15:41:30,491 p=8435 u=student |  ok: [master.lab.example.com]
+2018-11-26 15:41:30,497 p=8435 u=student |  TASK [docker : Firewall- Create Docker Zone] ************************************************************
+2018-11-26 15:41:31,142 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:31,285 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:31,315 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:31,321 p=8435 u=student |  TASK [docker : Reload Firewall Service] *****************************************************************
+2018-11-26 15:41:32,227 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:32,356 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:32,411 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:32,420 p=8435 u=student |  TASK [docker : Firewall- Identify Docker Zone Source] ***************************************************
+2018-11-26 15:41:33,235 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:33,249 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:33,254 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:33,260 p=8435 u=student |  TASK [docker : Firewall- Open Docker DNS] ***************************************************************
+2018-11-26 15:41:33,903 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:33,911 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:33,915 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:33,921 p=8435 u=student |  TASK [docker-storage : Customize default /etc/sysconfig/docker-storage-setup] ***************************
+2018-11-26 15:41:33,939 p=8435 u=student |  skipping: [master.lab.example.com]
+2018-11-26 15:41:33,957 p=8435 u=student |  skipping: [node1.lab.example.com]
+2018-11-26 15:41:33,958 p=8435 u=student |  skipping: [node2.lab.example.com]
+2018-11-26 15:41:33,965 p=8435 u=student |  TASK [docker-storage : Customize /etc/sysconfig/docker-storage-setup using overlay2 storage driver] *****
+2018-11-26 15:41:35,085 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:35,095 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:35,127 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:35,133 p=8435 u=student |  TASK [docker-storage : Verify existence of /dev/docker-vg/docker-pool] **********************************
+2018-11-26 15:41:35,527 p=8435 u=student |  ok: [node1.lab.example.com]
+2018-11-26 15:41:35,529 p=8435 u=student |  ok: [node2.lab.example.com]
+2018-11-26 15:41:35,543 p=8435 u=student |  ok: [master.lab.example.com]
+2018-11-26 15:41:35,549 p=8435 u=student |  TASK [docker-storage : Stop docker] *********************************************************************
+2018-11-26 15:41:36,946 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:36,966 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:37,000 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:37,006 p=8435 u=student |  TASK [docker-storage : Remove loopback docker files] ****************************************************
+2018-11-26 15:41:37,477 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:37,494 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:37,506 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:37,512 p=8435 u=student |  TASK [docker-storage : Run docker-storage-setup] ********************************************************
+2018-11-26 15:41:38,954 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:39,085 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:39,124 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:39,131 p=8435 u=student |  TASK [docker-storage : Start and enable docker] *********************************************************
+2018-11-26 15:41:41,656 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:41,766 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:41,773 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:41,778 p=8435 u=student |  TASK [docker-registry-cert : Enable the Trust] **********************************************************
+2018-11-26 15:41:42,761 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:42,887 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:42,900 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:42,911 p=8435 u=student |  TASK [docker-registry-cert : Retrieve the certificate] **************************************************
+2018-11-26 15:41:43,674 p=8435 u=student |  changed: [master.lab.example.com -> services.lab.example.com]
+2018-11-26 15:41:43,684 p=8435 u=student |  changed: [node1.lab.example.com -> services.lab.example.com]
+2018-11-26 15:41:43,791 p=8435 u=student |  changed: [node2.lab.example.com -> services.lab.example.com]
+2018-11-26 15:41:43,797 p=8435 u=student |  TASK [docker-registry-cert : Copy the certificate] ******************************************************
+2018-11-26 15:41:44,526 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:44,546 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:44,583 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:44,590 p=8435 u=student |  TASK [docker-registry-cert : Update the Trust] **********************************************************
+2018-11-26 15:41:45,604 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:45,681 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:45,743 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:45,751 p=8435 u=student |  TASK [docker-registry-cert : Restart Docker] ************************************************************
+2018-11-26 15:41:49,527 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:41:49,673 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:41:49,675 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:41:49,691 p=8435 u=student |  TASK [openshift-node : Deploy ssh key to root at all nodes] *********************************************
+2018-11-26 15:41:50,306 p=8435 u=student |  changed: [node1.lab.example.com] => (item=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvypmcIHPWO/+Tm/etzWvmGiyWognWbhTeyXSBMV/SfciyOVAu6o/LbskdMsTL2Gk2FzZABIlVfMzu8KkR80ZBVuPjHHj1fjxymE2nQVyax1CZxuFex6umdqOI9LIJ5458xafG2hivUUdTEUnHtb0mx6rNjRFekAmdPOTCZUqsuWO2cLgj3IUXDOaW7RFBEmVj66vTQm4AyXKW3dWg9WokIwA+CeXNci5yRLdK40dz6ZdFlG9NVCk+xj/qQBRNVL9Mf4Qnjal2zOJovYGYqvSJ9t9n54sQ70TiFZN7v1663ipcGH9OyTpc1kHJ2RDxgGLAbGDiq8u/3D3mtd5Ib5x5 student)
+2018-11-26 15:41:50,313 p=8435 u=student |  changed: [master.lab.example.com] => (item=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvypmcIHPWO/+Tm/etzWvmGiyWognWbhTeyXSBMV/SfciyOVAu6o/LbskdMsTL2Gk2FzZABIlVfMzu8KkR80ZBVuPjHHj1fjxymE2nQVyax1CZxuFex6umdqOI9LIJ5458xafG2hivUUdTEUnHtb0mx6rNjRFekAmdPOTCZUqsuWO2cLgj3IUXDOaW7RFBEmVj66vTQm4AyXKW3dWg9WokIwA+CeXNci5yRLdK40dz6ZdFlG9NVCk+xj/qQBRNVL9Mf4Qnjal2zOJovYGYqvSJ9t9n54sQ70TiFZN7v1663ipcGH9OyTpc1kHJ2RDxgGLAbGDiq8u/3D3mtd5Ib5x5 student)
+2018-11-26 15:41:50,326 p=8435 u=student |  changed: [node2.lab.example.com] => (item=ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCvypmcIHPWO/+Tm/etzWvmGiyWognWbhTeyXSBMV/SfciyOVAu6o/LbskdMsTL2Gk2FzZABIlVfMzu8KkR80ZBVuPjHHj1fjxymE2nQVyax1CZxuFex6umdqOI9LIJ5458xafG2hivUUdTEUnHtb0mx6rNjRFekAmdPOTCZUqsuWO2cLgj3IUXDOaW7RFBEmVj66vTQm4AyXKW3dWg9WokIwA+CeXNci5yRLdK40dz6ZdFlG9NVCk+xj/qQBRNVL9Mf4Qnjal2zOJovYGYqvSJ9t9n54sQ70TiFZN7v1663ipcGH9OyTpc1kHJ2RDxgGLAbGDiq8u/3D3mtd5Ib5x5 student)
+2018-11-26 15:41:50,332 p=8435 u=student |  TASK [openshift-node : Install required packages] *******************************************************
+2018-11-26 15:43:19,328 p=8435 u=student |  changed: [master.lab.example.com] => (item=[u'wget', u'git', u'net-tools', u'bind-utils', u'iptables-services', u'bridge-utils', u'bash-completion', u'kexec-tools', u'sos', u'psacct', u'atomic-openshift-clients', u'atomic-openshift-utils', u'atomic-openshift'])
+2018-11-26 15:43:19,761 p=8435 u=student |  changed: [node1.lab.example.com] => (item=[u'wget', u'git', u'net-tools', u'bind-utils', u'iptables-services', u'bridge-utils', u'bash-completion', u'kexec-tools', u'sos', u'psacct', u'atomic-openshift-clients', u'atomic-openshift-utils', u'atomic-openshift'])
+2018-11-26 15:43:20,577 p=8435 u=student |  changed: [node2.lab.example.com] => (item=[u'wget', u'git', u'net-tools', u'bind-utils', u'iptables-services', u'bridge-utils', u'bash-completion', u'kexec-tools', u'sos', u'psacct', u'atomic-openshift-clients', u'atomic-openshift-utils', u'atomic-openshift'])
+2018-11-26 15:43:20,583 p=8435 u=student |  TASK [Student Account - Docker Access] ******************************************************************
+2018-11-26 15:43:21,337 p=8435 u=student |  changed: [node1.lab.example.com]
+2018-11-26 15:43:21,343 p=8435 u=student |  changed: [node2.lab.example.com]
+2018-11-26 15:43:21,379 p=8435 u=student |  changed: [master.lab.example.com]
+2018-11-26 15:43:21,381 p=8435 u=student |  PLAY RECAP **********************************************************************************************
+2018-11-26 15:43:21,381 p=8435 u=student |  master.lab.example.com     : ok=28   changed=24   unreachable=0    failed=0   
+2018-11-26 15:43:21,382 p=8435 u=student |  node1.lab.example.com      : ok=28   changed=24   unreachable=0    failed=0   
+2018-11-26 15:43:21,382 p=8435 u=student |  node2.lab.example.com      : ok=28   changed=24   unreachable=0    failed=0   
