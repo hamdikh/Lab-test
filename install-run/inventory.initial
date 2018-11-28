@@ -1,0 +1,32 @@
+[workstations]
+workstation.lab.example.com
+
+[nfs]
+services.lab.example.com
+
+[masters]
+master.lab.example.com
+
+[etcd]
+master.lab.example.com
+
+[nodes]
+master.lab.example.com openshift_ip=172.25.250.10 openshift_public_ip=172.25.252.10 openshift_node_labels="{'region':'master'}"
+node1.lab.example.com openshift_ip=172.25.250.11 openshift_public_ip=172.25.252.11 openshift_node_labels="{'region':'infra', 'node-role.kubernetes.io/compute':'true'}"
+node2.lab.example.com openshift_ip=172.25.250.12 openshift_public_ip=172.25.252.12 openshift_node_labels="{'region':'infra', 'node-role.kubernetes.io/compute':'true'}"
+
+[OSEv3:children]
+masters
+etcd
+nodes
+nfs
+
+#Variables needed by classroom host preparation playbooks.
+[nodes:vars]
+registry_local=registry.lab.example.com
+use_overlay2_driver=true
+insecure_registry=false
+run_docker_offline=true
+docker_storage_device=/dev/vdb
+
+
